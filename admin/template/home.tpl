@@ -33,10 +33,12 @@
 </ul>
 </div>
 {else}
+{if (isset($smarty.post.submit))}
 <h3>{'Rename process results'|@translate}</h3>
 <div class="infos">
 <p>{'The scan did not find any file which do not conform to required naming pattern'|@translate}</p>
 </div>
+{/if}
 {/if}
 
 
