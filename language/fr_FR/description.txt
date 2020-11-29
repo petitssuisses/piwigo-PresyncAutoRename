@@ -1,0 +1,1 @@
+Corrige automatiquement les noms de fichiers et répertoire de votre galerie pour les conformer aux restrictions de Piwigo (le nom des répertoires et des fichiers ne doit être constitué que de lettres, de chiffres, de "-", "_" et ".")
