@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Presync AutoRename
-Version: 1.0.0
+Version: 11.1
 Description: Automatically corrects files and directory names in your gallery.
-Plugin URI: 
-Author: Arnaud (bonhommedeneige)
+Plugin URI: http://piwigo.org/ext/extension_view.php?eid=902
+Author: petitssuisses
 Author URI: 
 */
 
@@ -23,7 +23,7 @@ if (basename(dirname(__FILE__)) != 'PresyncAutoRename')
 
 define('PRESYNCAUTORENAME_ID',      basename(dirname(__FILE__)));
 define('PRESYNCAUTORENAME_PATH' ,   PHPWG_PLUGINS_PATH . PRESYNCAUTORENAME_ID . '/');
-define('PRESYNCAUTORENAME_ADMIN',   get_root_url() . 'admin.php?page=plugin-' . PRESYNCAUTORENAME_ID.'&site=1');
+define('PRESYNCAUTORENAME_ADMIN',   get_root_url() . 'admin.php?page=plugin-' . PRESYNCAUTORENAME_ID);
 
 if (defined('IN_ADMIN'))
 {

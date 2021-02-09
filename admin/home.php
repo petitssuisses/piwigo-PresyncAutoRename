@@ -23,11 +23,14 @@ if (!$conf['enable_synchronization'])
 // Check user is admin
 check_status(ACCESS_ADMINISTRATOR);
 
-if (!is_numeric($_GET['site']))
-{
-  die ('site param missing or invalid');
+$site_id = 1;
+if (isset($_GET['site'])) {
+    $site_id = $_GET['site'];
+    if (!is_numeric($_GET['site']))
+    {
+        die ('site param missing or invalid');
+    }
 }
-$site_id = $_GET['site'];
 
 // Check that the site exists
 $query='
