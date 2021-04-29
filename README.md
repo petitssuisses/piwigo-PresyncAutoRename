@@ -9,7 +9,7 @@ It automatically checks for files existence prior renaming them, appending a seq
 
 # Versions history
 * Version 11.2
-  * Added #1 - Automatic conversion of eastern arabic numbers to western characters (numbers) in filenames
+  * Added [#1](https://github.com/petitssuisses/piwigo-PresyncAutoRename/issues/1) - Automatic conversion of eastern arabic numbers to western characters (numbers) in filenames
 * Version 11.1
   * Piwigo 11 compatible version
 * Version 1.1.0
