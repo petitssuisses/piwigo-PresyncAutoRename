@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Presync AutoRename
-Version: 11.1
+Version: 11.2
 Description: Automatically corrects files and directory names in your gallery.
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=902
 Author: petitssuisses

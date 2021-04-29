@@ -204,7 +204,16 @@ SELECT id
 	// Note : if a directory already exists, it will prefix the new name with an incremental number (_1, _2, _3, ...)
 	foreach ($dirs_to_rename_r as $current_dir) {
 		$inc_dir = 0;
-		$tmp_newdir = dirname($current_dir['origin'])."/".preg_replace("/[^a-zA-Z0-9]/",'_', basename($current_dir['origin']));
+		
+		$tmp_basename = basename($current_dir['origin']);
+		// Transcode Eastern Arabic numerals (https://en.wikipedia.org/wiki/Eastern_Arabic_numerals) to Western Arabic numerals https://en.wikipedia.org/wiki/Arabic_numerals)
+		// See unicode correspondances here : https://en.wikipedia.org/wiki/Arabic_(Unicode_block)
+		$western_arabic = array('0','1','2','3','4','5','6','7','8','9');
+		//$eastern_arabic = array('\u0600','\u0601','\u0602','\u0603','\u0604','\u0605','\u0606','\u0607','\u0608','\u0609');
+		$eastern_arabic = array('٠','١','٢','٣','٤','٥','٦','٧','٨','٩');
+		$tmp_basename=str_replace($eastern_arabic,$western_arabic,$tmp_basename);
+		
+		$tmp_newdir = dirname($current_dir['origin'])."/".preg_replace("/[^a-zA-Z0-9]/",'_', $tmp_basename);
 		$tst_newdir = $tmp_newdir;
 		while (is_dir($tst_newdir)) {
 			$tst_newdir = $tmp_newdir."_".$inc_dir;
@@ -258,7 +267,15 @@ if (isset($_POST['submit']) and $_POST['sync'] == 'files'
 
 		
 		$inc_file = 0;
-		$tmp_newfile = $dirname."/".preg_replace("/[^a-zA-Z0-9]/",'_', basename($filename,".".$file_extension));
+		$tmp_basename = basename($filename,".".$file_extension);
+		// Transcode Eastern Arabic numerals (https://en.wikipedia.org/wiki/Eastern_Arabic_numerals) to Western Arabic numerals https://en.wikipedia.org/wiki/Arabic_numerals)
+		// See unicode correspondances here : https://en.wikipedia.org/wiki/Arabic_(Unicode_block)
+		$western_arabic = array('0','1','2','3','4','5','6','7','8','9');
+		//$eastern_arabic = array('\u0600','\u0601','\u0602','\u0603','\u0604','\u0605','\u0606','\u0607','\u0608','\u0609');
+		$eastern_arabic = array('٠','١','٢','٣','٤','٥','٦','٧','٨','٩');
+		$tmp_basename=str_replace($eastern_arabic,$western_arabic,$tmp_basename);
+		
+		$tmp_newfile = $dirname."/".preg_replace("/[^a-zA-Z0-9]/",'_', $tmp_basename);
 		$tst_newfile = $tmp_newfile.".".$file_extension;
 		while (is_file($tst_newfile)) {
 			$tst_newfile = $tmp_newfile."_".$inc_file.".".$file_extension;
