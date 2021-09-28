@@ -1,11 +1,12 @@
 <?php
 /*
 Plugin Name: Presync AutoRename
-Version: 11.2
+Version: 12.1
 Description: Automatically corrects files and directory names in your gallery.
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=902
 Author: petitssuisses
-Author URI: 
+Author URI: http://piwigo.org/forum/profile.php?id=19052
+Has Settings: true
 */
 
 defined('PHPWG_ROOT_PATH') or die('Hacking attempt!');
@@ -32,9 +33,6 @@ if (defined('IN_ADMIN'))
 	
 	// init the plugin
 	add_event_handler('init', 'presyncautorename_init');
-
-	// admin plugins menu link
-	add_event_handler('get_admin_plugin_menu_links', 'presyncautorename_admin_plugin_menu_links', EVENT_HANDLER_PRIORITY_NEUTRAL, $admin_file);
 }
 
 function presyncautorename_init()  // load plugin language file

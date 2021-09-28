@@ -8,6 +8,8 @@ It has a simulation mode to preview which changes will be made on your files.
 It automatically checks for files existence prior renaming them, appending a sequential number to them in case of duplicate
 
 # Versions history
+* Version 12.1
+  * Piwigo 12 compatible
 * Version 11.2
   * Added [#1](https://github.com/petitssuisses/piwigo-PresyncAutoRename/issues/1) - Automatic conversion of eastern arabic numbers to western characters (numbers) in filenames
 * Version 11.1
